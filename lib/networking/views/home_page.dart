@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mentoring/localization/app_localization.dart';
 import 'package:flutter_mentoring/networking/views/posts_list_page.dart';
 
 import '../mixins/app_bar_mixin.dart';
@@ -13,13 +14,13 @@ class HomePage extends StatelessWidget with AppBarMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(title: 'Home Page'),
+      appBar: buildAppBar(title: AppLocalization.of(context).titleText),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             OutlinedButton(
-              child: const Text('GO TO 2nd SCREEN'),
+              child: Text(AppLocalization.of(context).buttonText),
               onPressed: () => _navigateToPostsListPage(context),
             ),
             StreamBuilder(
