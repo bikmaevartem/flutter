@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_mentoring/localization/app_localization.dart';
 import 'package:flutter_mentoring/networking/views/posts_list_page.dart';
+import 'package:flutter_mentoring/networking/views/test_page.dart';
 
 import '../mixins/app_bar_mixin.dart';
 import '../models/post_model.dart';
@@ -19,6 +20,14 @@ class HomePage extends StatelessWidget with AppBarMixin{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            OutlinedButton(
+              child: const Text('Page with InheritedWidget'),
+              onPressed: () => {
+                Navigator.of(context).push(
+                MaterialPageRoute(builder: (context)=> TestPage())
+                )
+              }
+            ),
             OutlinedButton(
               child: Text(AppLocalization.of(context).buttonText),
               onPressed: () => _navigateToPostsListPage(context),
