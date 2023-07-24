@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mentoring/localization/app_localization_delegate.dart';
-import 'package:flutter_mentoring/networking/views/home_page.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'web/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,16 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(backgroundColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
-      localizationsDelegates: const [
-        AppLocalizationDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate
-      ],
-      supportedLocales: const [
-        Locale('en'),
-        Locale('de'),
-      ],
+      home: const HomePage(title: 'Home page'),
     );
   }
 }
